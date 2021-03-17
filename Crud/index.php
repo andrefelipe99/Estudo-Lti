@@ -40,9 +40,7 @@
                         $sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'";
 
                         if ($result = mysqli_query($coon, $sql)) {
-                            $num_registro = mysqli_num_rows($result);
-
-                            if ($num_registro == 1) {
+                            if ($num_registro = mysqli_num_rows($result)) {
                                 $linha = mysqli_fetch_assoc($result);
                                 if (($login == $linha['login']) && ($senha == $linha['senha'])) {
                                     session_start();
