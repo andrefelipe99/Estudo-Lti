@@ -86,15 +86,26 @@ table, th, td{
         } echo "</table>";
     }   else{
         echo "0 results";
-    }*/
+    }
 
-    $sql = "DELETE FROM myTable WHERE id = 11";
+    $sql = "DELETE FROM myTable WHERE id = 5";
 
     if($conn->query($sql) === true){
         echo "Record deleted successfully";
     } else{
         echo "Error deleting record: " . $conn->error;
     }
+
+    $sql = "UPDATE myTable SET lastname= 'Santiago' WHERE firstname = 'André'";
+
+    if($conn->query($sql) === true){
+        echo "Record update successfully";
+    } else{
+        echo "Error updating record: " . $conn->error;
+    }
+
+    $sql = "SELECT * FROM myTable LIMIT 10";
+    */
 
     $conn->close();
 ?>
